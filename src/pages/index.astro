@@ -366,7 +366,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	}
 
 	.hero-content h1 {
-		font-size: 4.5em;
+		font-size: 7em;
 		margin-bottom: 0.4em;
 		color: rgb(var(--black));
 		font-weight: 700;
@@ -382,6 +382,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 			'opsz' var(--hello-opsz);
 		will-change: font-variation-settings;
 		contain: layout style;
+		display: inline-block;
 	}
 
 	.intro {
@@ -601,7 +602,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		}
 
 		.hero-content h1 {
-			font-size: 3em;
+			font-size: 4.5em;
 		}
 
 		.intro {
@@ -698,21 +699,28 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		const root = document.documentElement;
 		let currentStep = 0;
 		const steps = [
-			// Each step changes one property, then pauses
-			{ prop: '--hello-weight', start: 700, end: 900, duration: 800, pause: 2000 },
-			{ prop: '--hello-weight', start: 900, end: 700, duration: 800, pause: 2000 },
+			// Extreme weight changes
+			{ prop: '--hello-weight', start: 700, end: 900, duration: 1000, pause: 4000 },
+			{ prop: '--hello-weight', start: 900, end: 200, duration: 1000, pause: 4000 },
+			{ prop: '--hello-weight', start: 200, end: 700, duration: 1000, pause: 4000 },
 
-			{ prop: '--hello-width', start: 100, end: 75, duration: 700, pause: 2000 },
-			{ prop: '--hello-width', start: 75, end: 100, duration: 700, pause: 2000 },
+			// Extreme width changes
+			{ prop: '--hello-width', start: 100, end: 62, duration: 900, pause: 4000 },
+			{ prop: '--hello-width', start: 62, end: 125, duration: 900, pause: 4000 },
+			{ prop: '--hello-width', start: 125, end: 100, duration: 900, pause: 4000 },
 
-			{ prop: '--hello-slant', start: 0, end: -10, duration: 600, pause: 2000 },
-			{ prop: '--hello-slant', start: -10, end: 0, duration: 600, pause: 2000 },
+			// Extreme slant changes
+			{ prop: '--hello-slant', start: 0, end: -10, duration: 800, pause: 4000 },
+			{ prop: '--hello-slant', start: -10, end: 0, duration: 800, pause: 4000 },
 
-			{ prop: '--hello-opsz', start: 32, end: 16, duration: 700, pause: 2000 },
-			{ prop: '--hello-opsz', start: 16, end: 32, duration: 700, pause: 2000 },
+			// Extreme optical size (height) changes
+			{ prop: '--hello-opsz', start: 32, end: 14, duration: 900, pause: 4000 },
+			{ prop: '--hello-opsz', start: 14, end: 32, duration: 900, pause: 4000 },
 
-			{ prop: '--hello-weight', start: 700, end: 300, duration: 800, pause: 2000 },
-			{ prop: '--hello-weight', start: 300, end: 700, duration: 800, pause: 2000 }
+			// Super thin to super bold
+			{ prop: '--hello-weight', start: 700, end: 100, duration: 1000, pause: 4000 },
+			{ prop: '--hello-weight', start: 100, end: 900, duration: 1000, pause: 4000 },
+			{ prop: '--hello-weight', start: 900, end: 700, duration: 1000, pause: 4000 }
 		];
 
 		function animateStep(stepIndex) {
