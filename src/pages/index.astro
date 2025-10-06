@@ -373,6 +373,13 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		line-height: 1.1;
 	}
 
+	.hello-text {
+		font-family: 'Inter', sans-serif;
+		font-variation-settings: 'wght' var(--hello-weight), 'wdth' var(--hello-width);
+		will-change: font-variation-settings;
+		contain: layout style;
+	}
+
 	.intro {
 		font-size: 1.25em;
 		line-height: 1.7;
