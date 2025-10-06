@@ -689,5 +689,28 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 				}, 600);
 			});
 		}
+
+		// Variable font animation
+		const root = document.documentElement;
+		let time = 0;
+
+		function animateFont() {
+			time += 0.015;
+
+			// Smooth oscillation for weight (600-900)
+			const weight = 700 + Math.sin(time) * 150;
+
+			// Subtle width variation (95-105)
+			const width = 100 + Math.sin(time * 0.7) * 5;
+
+			// Update CSS custom properties (no layout invalidation)
+			root.style.setProperty('--hello-weight', weight);
+			root.style.setProperty('--hello-width', width);
+
+			requestAnimationFrame(animateFont);
+		}
+
+		// Start animation
+		requestAnimationFrame(animateFont);
 	});
 </script>
