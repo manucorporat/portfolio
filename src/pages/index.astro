@@ -1,7 +1,6 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
 import ShaderBackground from '../components/ShaderBackground.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 ---
@@ -13,10 +12,23 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	</head>
 	<body>
 		<ShaderBackground />
-		<Header />
 		<main>
-			<section class="hero-card">
-				<div class="greeting">
+			<section class="hero-container">
+				<div class="hero-header">
+					<h2 class="site-name"><a href="/">Manu MA</a></h2>
+					<nav class="nav-center">
+						<a href="/">Home</a>
+						<a href="/blog">Blog</a>
+						<a href="/about">About</a>
+					</nav>
+					<div class="social-links">
+						<a href="https://github.com/manucorporat" target="_blank">GitHub</a>
+						<a href="https://www.linkedin.com/in/manu-mart%C3%ADnez-almeida-5b390539/" target="_blank">LinkedIn</a>
+						<a href="https://twitter.com/manucorporat" target="_blank">Twitter</a>
+					</div>
+				</div>
+				
+				<div class="hero-content">
 					<h1>Hello 👋</h1>
 					<p class="intro">
 						I'm <strong>Manu MA</strong>, an open source developer and tech innovator.
@@ -26,6 +38,10 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 						<a href="https://set.health" target="_blank">set.health</a>.
 					</p>
 				</div>
+
+				<div class="hero-footer">
+					<span class="location">Spain</span>
+				</div>
 			</section>
 
 			<section class="projects-section">
@@ -33,12 +49,13 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 				<div class="cards-grid">
 					<article class="project-card">
 						<div class="card-header">
-							<span class="project-label">Go Framework</span>
-							<span class="project-stars">86.3k ★</span>
+							<span class="project-date">2014 - Present</span>
+							<span class="project-id">ID 001</span>
 						</div>
 						<h3>
 							<a href="https://github.com/gin-gonic/gin" target="_blank">Gin</a>
 						</h3>
+						<p class="project-meta">Go Framework • 86.3k ★</p>
 						<p>
 							High-performance HTTP web framework for Go. Up to 40x faster than alternatives,
 							powering thousands of production applications worldwide.
@@ -48,12 +65,13 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 					<article class="project-card">
 						<div class="card-header">
-							<span class="project-label">Web Framework</span>
-							<span class="project-stars">21.7k ★</span>
+							<span class="project-date">2022 - Present</span>
+							<span class="project-id">ID 002</span>
 						</div>
 						<h3>
 							<a href="https://github.com/QwikDev/qwik" target="_blank">Qwik</a>
 						</h3>
+						<p class="project-meta">Web Framework • 21.7k ★</p>
 						<p>
 							Instant-loading web apps without effort. Revolutionary framework that delivers
 							O(1) loading time regardless of application complexity.
@@ -63,12 +81,13 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 					<article class="project-card">
 						<div class="card-header">
-							<span class="project-label">Mobile Framework</span>
-							<span class="project-stars">52.1k ★</span>
+							<span class="project-date">2016 - 2022</span>
+							<span class="project-id">ID 003</span>
 						</div>
 						<h3>
 							<a href="https://github.com/ionic-team/ionic-framework" target="_blank">Ionic</a>
 						</h3>
+						<p class="project-meta">Mobile Framework • 52.1k ★</p>
 						<p>
 							Core developer of the powerful cross-platform UI toolkit for building native-quality
 							iOS, Android, and Progressive Web Apps.
@@ -78,12 +97,13 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 					<article class="project-card">
 						<div class="card-header">
-							<span class="project-label">Web Components</span>
-							<span class="project-stars">12.9k ★</span>
+							<span class="project-date">2017 - 2022</span>
+							<span class="project-id">ID 004</span>
 						</div>
 						<h3>
 							<a href="https://github.com/stenciljs/core" target="_blank">Stencil</a>
 						</h3>
+						<p class="project-meta">Web Components • 12.9k ★</p>
 						<p>
 							Co-creator of the toolchain for building scalable, enterprise-ready component systems
 							on top of Web Components.
@@ -93,12 +113,13 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 					<article class="project-card">
 						<div class="card-header">
-							<span class="project-label">Healthcare Tech</span>
-							<span class="project-stars">Founder</span>
+							<span class="project-date">2023 - Present</span>
+							<span class="project-id">ID 005</span>
 						</div>
 						<h3>
 							<a href="https://set.health" target="_blank">set.health</a>
 						</h3>
+						<p class="project-meta">Healthcare Tech • Founder</p>
 						<p>
 							Healthcare technology startup focused on improving patient care through innovative
 							digital solutions.
@@ -108,12 +129,13 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 					<article class="project-card">
 						<div class="card-header">
-							<span class="project-label">Real-time</span>
-							<span class="project-stars">278 ★</span>
+							<span class="project-date">2015 - Present</span>
+							<span class="project-id">ID 006</span>
 						</div>
 						<h3>
 							<a href="https://github.com/manucorporat/sse" target="_blank">SSE</a>
 						</h3>
+						<p class="project-meta">Real-time • 278 ★</p>
 						<p>
 							Server-Sent Events implementation in Go, used by the Gin framework for real-time
 							communication.
@@ -192,28 +214,97 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	main {
 		position: relative;
 		z-index: 1;
+		padding: 2em 1.5em;
+		max-width: 1200px;
+		margin: 0 auto;
 	}
 
-	.hero-card {
+	.hero-container {
 		background: var(--bg-card);
 		border-radius: 18px;
-		padding: 3em 2.5em;
+		padding: 2.5em;
 		margin-bottom: 2em;
 		box-shadow: var(--box-shadow);
+		min-height: 65vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 	}
 
-	.greeting h1 {
-		font-size: 3.5em;
-		margin-bottom: 0.5em;
-		color: rgb(var(--black));
+	.hero-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		margin-bottom: 3em;
+	}
+
+	.site-name {
+		margin: 0;
+		font-size: 1.1em;
 		font-weight: 700;
 	}
 
+	.site-name a {
+		color: rgb(var(--black));
+		text-decoration: none;
+	}
+
+	.nav-center {
+		display: flex;
+		gap: 2em;
+		align-items: center;
+	}
+
+	.nav-center a {
+		color: rgb(var(--gray-dark));
+		text-decoration: none;
+		font-weight: 500;
+		font-size: 0.95em;
+		transition: color 0.2s;
+	}
+
+	.nav-center a:hover {
+		color: rgb(var(--black));
+	}
+
+	.social-links {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5em;
+		align-items: flex-end;
+	}
+
+	.social-links a {
+		color: rgb(var(--gray-dark));
+		text-decoration: none;
+		font-size: 0.9em;
+		transition: color 0.2s;
+	}
+
+	.social-links a:hover {
+		color: rgb(var(--black));
+	}
+
+	.hero-content {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		max-width: 700px;
+	}
+
+	.hero-content h1 {
+		font-size: 4.5em;
+		margin-bottom: 0.4em;
+		color: rgb(var(--black));
+		font-weight: 700;
+		line-height: 1.1;
+	}
+
 	.intro {
-		font-size: 1.1em;
+		font-size: 1.25em;
 		line-height: 1.7;
 		color: rgb(var(--gray-dark));
-		max-width: 700px;
 	}
 
 	.intro strong {
@@ -232,6 +323,18 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	.intro a:hover {
 		color: var(--accent-dark);
 		text-decoration-color: var(--accent-dark);
+	}
+
+	.hero-footer {
+		display: flex;
+		justify-content: flex-end;
+		margin-top: 2em;
+	}
+
+	.location {
+		font-size: 0.9em;
+		color: rgb(var(--gray));
+		font-style: italic;
 	}
 
 	.projects-section,
@@ -272,23 +375,21 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		justify-content: space-between;
 		align-items: center;
 		margin-bottom: 1em;
-		font-size: 0.85em;
+		font-size: 0.8em;
 	}
 
-	.project-label {
+	.project-date {
 		color: rgb(var(--gray));
-		font-weight: 600;
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
+		font-weight: 400;
 	}
 
-	.project-stars {
+	.project-id {
 		color: rgb(var(--gray));
 		font-weight: 600;
 	}
 
 	.project-card h3 {
-		margin: 0 0 0.8em 0;
+		margin: 0 0 0.5em 0;
 		font-size: 1.8em;
 		font-weight: 700;
 	}
@@ -302,7 +403,16 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		color: var(--accent-dark);
 	}
 
-	.project-card p {
+	.project-meta {
+		font-size: 0.85em;
+		color: rgb(var(--gray));
+		font-weight: 600;
+		margin: 0 0 1em 0;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.project-card p:last-of-type {
 		color: rgb(var(--gray-dark));
 		line-height: 1.6;
 		margin: 0;
@@ -378,12 +488,45 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		line-height: 1.5;
 	}
 
-	@media (max-width: 720px) {
-		.hero-card {
-			padding: 2em 1.5em;
+	@media (max-width: 900px) {
+		.hero-header {
+			flex-direction: column;
+			gap: 1.5em;
 		}
 
-		.greeting h1 {
+		.nav-center {
+			order: 2;
+			gap: 1.5em;
+		}
+
+		.social-links {
+			order: 1;
+			flex-direction: row;
+			align-items: center;
+			align-self: flex-start;
+			gap: 1.5em;
+		}
+
+		.hero-content h1 {
+			font-size: 3em;
+		}
+
+		.intro {
+			font-size: 1.1em;
+		}
+	}
+
+	@media (max-width: 720px) {
+		main {
+			padding: 1em;
+		}
+
+		.hero-container {
+			padding: 2em 1.5em;
+			min-height: auto;
+		}
+
+		.hero-content h1 {
 			font-size: 2.5em;
 		}
 
@@ -401,6 +544,15 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 		h2 {
 			padding-left: 0;
+		}
+
+		.nav-center {
+			gap: 1em;
+		}
+
+		.nav-center a,
+		.social-links a {
+			font-size: 0.85em;
 		}
 	}
 </style>
