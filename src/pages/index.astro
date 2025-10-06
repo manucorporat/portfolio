@@ -694,32 +694,25 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 			});
 		}
 
-		// Sequential variable font animation
+		// Sequential variable font animation with pauses
 		const root = document.documentElement;
 		let currentStep = 0;
 		const steps = [
-			// Weight variations
-			{ prop: '--hello-weight', start: 700, end: 900, duration: 600 },
-			{ prop: '--hello-weight', start: 900, end: 300, duration: 600 },
-			{ prop: '--hello-weight', start: 300, end: 700, duration: 600 },
+			// Each step changes one property, then pauses
+			{ prop: '--hello-weight', start: 700, end: 900, duration: 800, pause: 2000 },
+			{ prop: '--hello-weight', start: 900, end: 700, duration: 800, pause: 2000 },
 
-			// Width variations
-			{ prop: '--hello-width', start: 100, end: 70, duration: 500 },
-			{ prop: '--hello-width', start: 70, end: 115, duration: 500 },
-			{ prop: '--hello-width', start: 115, end: 100, duration: 500 },
+			{ prop: '--hello-width', start: 100, end: 75, duration: 700, pause: 2000 },
+			{ prop: '--hello-width', start: 75, end: 100, duration: 700, pause: 2000 },
 
-			// Slant (italic) variations
-			{ prop: '--hello-slant', start: 0, end: -10, duration: 400 },
-			{ prop: '--hello-slant', start: -10, end: 0, duration: 400 },
+			{ prop: '--hello-slant', start: 0, end: -10, duration: 600, pause: 2000 },
+			{ prop: '--hello-slant', start: -10, end: 0, duration: 600, pause: 2000 },
 
-			// Optical size variations
-			{ prop: '--hello-opsz', start: 32, end: 14, duration: 500 },
-			{ prop: '--hello-opsz', start: 14, end: 32, duration: 500 },
+			{ prop: '--hello-opsz', start: 32, end: 16, duration: 700, pause: 2000 },
+			{ prop: '--hello-opsz', start: 16, end: 32, duration: 700, pause: 2000 },
 
-			// Combo moves
-			{ prop: '--hello-weight', start: 700, end: 200, duration: 400 },
-			{ prop: '--hello-weight', start: 200, end: 900, duration: 400 },
-			{ prop: '--hello-weight', start: 900, end: 700, duration: 400 }
+			{ prop: '--hello-weight', start: 700, end: 300, duration: 800, pause: 2000 },
+			{ prop: '--hello-weight', start: 300, end: 700, duration: 800, pause: 2000 }
 		];
 
 		function animateStep(stepIndex) {
@@ -741,11 +734,11 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 				if (progress < 1) {
 					requestAnimationFrame(animate);
 				} else {
-					// Wait 200ms before next step
+					// Wait (pause) before next step
 					setTimeout(() => {
 						currentStep = (currentStep + 1) % steps.length;
 						animateStep(currentStep);
-					}, 200);
+					}, step.pause);
 				}
 			}
 
@@ -753,6 +746,6 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		}
 
 		// Start animation sequence
-		setTimeout(() => animateStep(0), 500);
+		setTimeout(() => animateStep(0), 1000);
 	});
 </script>
