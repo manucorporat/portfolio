@@ -138,16 +138,22 @@ const posts = (await getCollection('blog')).sort(
 	}
 
 	.post-card {
-		background: var(--bg-card);
-		border-radius: 18px;
+		background: rgba(255, 255, 255, 0.65);
+		backdrop-filter: blur(15px) saturate(1.4);
+		-webkit-backdrop-filter: blur(15px) saturate(1.4);
+		border: 1px solid rgba(255, 255, 255, 0.4);
+		border-radius: 20px;
 		overflow: hidden;
-		box-shadow: var(--box-shadow);
-		transition: transform 0.2s, box-shadow 0.2s;
+		box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08),
+		            0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+		transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
 	}
 
 	.post-card:hover {
 		transform: translateY(-2px);
-		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+		background: rgba(255, 255, 255, 0.75);
+		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12),
+		            0 0 0 1px rgba(255, 255, 255, 0.2) inset;
 	}
 
 	.post-card a {
