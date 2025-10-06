@@ -15,145 +15,173 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		<ShaderBackground />
 		<Header />
 		<main>
-			<section class="hero">
-				<h1>Manu MA</h1>
-				<p class="subtitle">Open Source Developer & Tech Innovator</p>
-				<p class="bio">
-					Creator of <a href="https://github.com/gin-gonic/gin" target="_blank">Gin</a> (86k+ stars),
-					co-creator of <a href="https://qwik.dev" target="_blank">Qwik</a> and
-					<a href="https://stenciljs.com" target="_blank">Stencil</a>, Ionic core developer,
-					and founder of <a href="https://set.health" target="_blank">set.health</a>.
-				</p>
+			<section class="hero-card">
+				<div class="greeting">
+					<h1>Hello 👋</h1>
+					<p class="intro">
+						I'm <strong>Manu MA</strong>, an open source developer and tech innovator.
+						Creator of <a href="https://github.com/gin-gonic/gin" target="_blank">Gin</a>,
+						co-creator of <a href="https://qwik.dev" target="_blank">Qwik</a> and
+						<a href="https://stenciljs.com" target="_blank">Stencil</a>, and founder of
+						<a href="https://set.health" target="_blank">set.health</a>.
+					</p>
+				</div>
 			</section>
 
-			<section class="featured-projects">
-				<h2>Featured Projects</h2>
-				<div class="projects-grid">
+			<section class="projects-section">
+				<h2>Featured Work</h2>
+				<div class="cards-grid">
 					<article class="project-card">
+						<div class="card-header">
+							<span class="project-label">Go Framework</span>
+							<span class="project-stars">86.3k ★</span>
+						</div>
 						<h3>
 							<a href="https://github.com/gin-gonic/gin" target="_blank">Gin</a>
 						</h3>
-						<p class="project-meta">Go • 86.3k stars</p>
 						<p>
 							High-performance HTTP web framework for Go. Up to 40x faster than alternatives,
 							powering thousands of production applications worldwide.
 						</p>
+						<div class="card-badge"></div>
 					</article>
 
 					<article class="project-card">
+						<div class="card-header">
+							<span class="project-label">Web Framework</span>
+							<span class="project-stars">21.7k ★</span>
+						</div>
 						<h3>
 							<a href="https://github.com/QwikDev/qwik" target="_blank">Qwik</a>
 						</h3>
-						<p class="project-meta">TypeScript • 21.7k stars</p>
 						<p>
 							Instant-loading web apps without effort. Revolutionary framework that delivers
 							O(1) loading time regardless of application complexity.
 						</p>
+						<div class="card-badge"></div>
 					</article>
 
 					<article class="project-card">
+						<div class="card-header">
+							<span class="project-label">Mobile Framework</span>
+							<span class="project-stars">52.1k ★</span>
+						</div>
 						<h3>
-							<a href="https://github.com/ionic-team/ionic-framework" target="_blank">Ionic Framework</a>
+							<a href="https://github.com/ionic-team/ionic-framework" target="_blank">Ionic</a>
 						</h3>
-						<p class="project-meta">TypeScript • 52.1k stars</p>
 						<p>
 							Core developer of the powerful cross-platform UI toolkit for building native-quality
 							iOS, Android, and Progressive Web Apps.
 						</p>
+						<div class="card-badge"></div>
 					</article>
 
 					<article class="project-card">
+						<div class="card-header">
+							<span class="project-label">Web Components</span>
+							<span class="project-stars">12.9k ★</span>
+						</div>
 						<h3>
 							<a href="https://github.com/stenciljs/core" target="_blank">Stencil</a>
 						</h3>
-						<p class="project-meta">TypeScript • 12.9k stars</p>
 						<p>
 							Co-creator of the toolchain for building scalable, enterprise-ready component systems
 							on top of Web Components.
 						</p>
+						<div class="card-badge"></div>
 					</article>
 
 					<article class="project-card">
-						<h3>
-							<a href="https://github.com/manucorporat/sse" target="_blank">SSE</a>
-						</h3>
-						<p class="project-meta">Go • 278 stars</p>
-						<p>
-							Server-Sent Events implementation in Go, used by the Gin framework for real-time
-							communication.
-						</p>
-					</article>
-
-					<article class="project-card">
+						<div class="card-header">
+							<span class="project-label">Healthcare Tech</span>
+							<span class="project-stars">Founder</span>
+						</div>
 						<h3>
 							<a href="https://set.health" target="_blank">set.health</a>
 						</h3>
-						<p class="project-meta">Founder</p>
 						<p>
 							Healthcare technology startup focused on improving patient care through innovative
 							digital solutions.
 						</p>
+						<div class="card-badge"></div>
+					</article>
+
+					<article class="project-card">
+						<div class="card-header">
+							<span class="project-label">Real-time</span>
+							<span class="project-stars">278 ★</span>
+						</div>
+						<h3>
+							<a href="https://github.com/manucorporat/sse" target="_blank">SSE</a>
+						</h3>
+						<p>
+							Server-Sent Events implementation in Go, used by the Gin framework for real-time
+							communication.
+						</p>
+						<div class="card-badge"></div>
 					</article>
 				</div>
 			</section>
 
-			<section class="experience">
-				<h2>Experience & Contributions</h2>
-				<div class="timeline">
-					<div class="timeline-item">
-						<h3>Builder.io</h3>
-						<p class="role">Senior Engineer</p>
-						<p>Working on cutting-edge web technologies and developer tools</p>
-					</div>
+			<section class="timeline-section">
+				<h2>Experience</h2>
+				<div class="timeline-card">
+					<div class="timeline-items">
+						<div class="timeline-item">
+							<div class="timeline-dot"></div>
+							<div class="timeline-content">
+								<h3>Builder.io</h3>
+								<p class="role">Senior Engineer</p>
+								<p class="description">Working on cutting-edge web technologies and developer tools</p>
+							</div>
+						</div>
 
-					<div class="timeline-item">
-						<h3>Qwik</h3>
-						<p class="role">Co-creator</p>
-						<p>Revolutionary framework for instant-loading web applications</p>
-					</div>
+						<div class="timeline-item">
+							<div class="timeline-dot"></div>
+							<div class="timeline-content">
+								<h3>Qwik</h3>
+								<p class="role">Co-creator</p>
+								<p class="description">Revolutionary framework for instant-loading web applications</p>
+							</div>
+						</div>
 
-					<div class="timeline-item">
-						<h3>Stencil</h3>
-						<p class="role">Co-creator</p>
-						<p>Web Components compiler for building design systems and component libraries</p>
-					</div>
+						<div class="timeline-item">
+							<div class="timeline-dot"></div>
+							<div class="timeline-content">
+								<h3>Stencil</h3>
+								<p class="role">Co-creator</p>
+								<p class="description">Web Components compiler for building design systems</p>
+							</div>
+						</div>
 
-					<div class="timeline-item">
-						<h3>Ionic</h3>
-						<p class="role">Core Developer</p>
-						<p>Core contributor to one of the most popular cross-platform frameworks</p>
-					</div>
+						<div class="timeline-item">
+							<div class="timeline-dot"></div>
+							<div class="timeline-content">
+								<h3>Ionic</h3>
+								<p class="role">Core Developer</p>
+								<p class="description">Core contributor to cross-platform framework</p>
+							</div>
+						</div>
 
-					<div class="timeline-item">
-						<h3>Gin Framework</h3>
-						<p class="role">Creator & Maintainer</p>
-						<p>Created the most popular Go web framework with 86k+ stars</p>
-					</div>
+						<div class="timeline-item">
+							<div class="timeline-dot"></div>
+							<div class="timeline-content">
+								<h3>Gin Framework</h3>
+								<p class="role">Creator & Maintainer</p>
+								<p class="description">Created the most popular Go web framework</p>
+							</div>
+						</div>
 
-					<div class="timeline-item">
-						<h3>HTML Specification</h3>
-						<p class="role">Contributor</p>
-						<p>Contributed to the evolution of web standards</p>
-					</div>
-
-					<div class="timeline-item">
-						<h3>Cocos2d</h3>
-						<p class="role">Top Contributor</p>
-						<p>Major contributions to the popular game development framework</p>
+						<div class="timeline-item">
+							<div class="timeline-dot"></div>
+							<div class="timeline-content">
+								<h3>HTML Specification</h3>
+								<p class="role">Contributor</p>
+								<p class="description">Contributed to the evolution of web standards</p>
+							</div>
+						</div>
 					</div>
 				</div>
-			</section>
-
-			<section class="early-work">
-				<h2>Early Projects</h2>
-				<p>
-					Started coding at a young age, creating games and interactive experiences.
-					Founded FORZEFIELD Studios at 15, developing <strong>Infinity Field</strong> - a dual-stick
-					shooter for iOS with multiplayer capabilities, featured by IGN, AppSpy, and other major outlets.
-				</p>
-				<p class="shader-note">
-					<em>Background: Electric field simulation shader - one of many WebGL experiments</em>
-				</p>
 			</section>
 		</main>
 		<Footer />
@@ -166,182 +194,213 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		z-index: 1;
 	}
 
-	.hero {
-		text-align: center;
-		padding: 4em 0 3em;
+	.hero-card {
+		background: var(--bg-card);
+		border-radius: 18px;
+		padding: 3em 2.5em;
 		margin-bottom: 2em;
+		box-shadow: var(--box-shadow);
 	}
 
-	.hero h1 {
-		font-size: 4em;
-		margin-bottom: 0.2em;
-		background: linear-gradient(135deg, #fff 0%, #a0a0ff 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
+	.greeting h1 {
+		font-size: 3.5em;
+		margin-bottom: 0.5em;
+		color: rgb(var(--black));
+		font-weight: 700;
 	}
 
-	.subtitle {
-		font-size: 1.5em;
-		color: #fff;
-		margin-bottom: 1em;
+	.intro {
+		font-size: 1.1em;
+		line-height: 1.7;
+		color: rgb(var(--gray-dark));
+		max-width: 700px;
+	}
+
+	.intro strong {
+		color: rgb(var(--black));
 		font-weight: 600;
 	}
 
-	.bio {
-		font-size: 1.1em;
-		max-width: 800px;
-		margin: 0 auto;
-		line-height: 1.8;
-		color: #e0e0ff;
+	.intro a {
+		color: rgb(var(--black));
+		text-decoration: underline;
+		text-decoration-color: var(--accent);
+		text-decoration-thickness: 2px;
+		text-underline-offset: 3px;
 	}
 
-	.bio a {
-		color: #88ff88;
-		text-decoration: none;
-		border-bottom: 2px solid transparent;
-		transition: border-color 0.3s;
+	.intro a:hover {
+		color: var(--accent-dark);
+		text-decoration-color: var(--accent-dark);
 	}
 
-	.bio a:hover {
-		border-bottom-color: #88ff88;
-	}
-
-	section {
-		margin-bottom: 4em;
-		background: rgba(255, 255, 255, 0.95);
-		padding: 2em;
-		border-radius: 12px;
-		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-	}
-
-	.hero {
-		background: transparent;
-		box-shadow: none;
+	.projects-section,
+	.timeline-section {
+		margin-bottom: 2em;
 	}
 
 	h2 {
-		color: rgb(var(--black));
-		border-bottom: 3px solid var(--accent);
-		padding-bottom: 0.5em;
+		font-size: 1.5em;
 		margin-bottom: 1.5em;
+		color: rgb(var(--black));
+		font-weight: 600;
+		padding-left: 0.5em;
 	}
 
-	.projects-grid {
+	.cards-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 		gap: 1.5em;
 	}
 
 	.project-card {
-		background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
-		padding: 1.5em;
-		border-radius: 8px;
-		border: 2px solid #e0e0ff;
-		transition: transform 0.3s, box-shadow 0.3s;
+		background: var(--bg-card);
+		border-radius: 18px;
+		padding: 2em;
+		box-shadow: var(--box-shadow);
+		position: relative;
+		transition: transform 0.2s, box-shadow 0.2s;
 	}
 
 	.project-card:hover {
-		transform: translateY(-4px);
-		box-shadow: 0 8px 24px rgba(35, 55, 255, 0.15);
+		transform: translateY(-2px);
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+	}
+
+	.card-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 1em;
+		font-size: 0.85em;
+	}
+
+	.project-label {
+		color: rgb(var(--gray));
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.project-stars {
+		color: rgb(var(--gray));
+		font-weight: 600;
 	}
 
 	.project-card h3 {
-		margin-top: 0;
-		margin-bottom: 0.5em;
+		margin: 0 0 0.8em 0;
+		font-size: 1.8em;
+		font-weight: 700;
 	}
 
 	.project-card h3 a {
-		color: var(--accent-dark);
+		color: rgb(var(--black));
 		text-decoration: none;
 	}
 
 	.project-card h3 a:hover {
-		color: var(--accent);
+		color: var(--accent-dark);
 	}
 
-	.project-meta {
-		font-size: 0.9em;
-		color: rgb(var(--gray));
-		margin-bottom: 1em;
-		font-weight: 600;
+	.project-card p {
+		color: rgb(var(--gray-dark));
+		line-height: 1.6;
+		margin: 0;
+		padding-bottom: 2em;
 	}
 
-	.project-card p:last-child {
-		margin-bottom: 0;
-	}
-
-	.timeline {
-		display: flex;
-		flex-direction: column;
-		gap: 1.5em;
-	}
-
-	.timeline-item {
-		padding-left: 2em;
-		border-left: 3px solid var(--accent);
-		position: relative;
-	}
-
-	.timeline-item::before {
-		content: '';
+	.card-badge {
 		position: absolute;
-		left: -8px;
-		top: 0;
-		width: 13px;
-		height: 13px;
+		bottom: 1.5em;
+		right: 1.5em;
+		width: 12px;
+		height: 12px;
 		background: var(--accent);
 		border-radius: 50%;
 	}
 
-	.timeline-item h3 {
-		margin-top: 0;
-		margin-bottom: 0.3em;
+	.timeline-card {
+		background: var(--bg-card);
+		border-radius: 18px;
+		padding: 2.5em;
+		box-shadow: var(--box-shadow);
+	}
+
+	.timeline-items {
+		display: flex;
+		flex-direction: column;
+		gap: 2em;
+	}
+
+	.timeline-item {
+		display: flex;
+		gap: 1.5em;
+		position: relative;
+	}
+
+	.timeline-item:not(:last-child)::after {
+		content: '';
+		position: absolute;
+		left: 9px;
+		top: 30px;
+		bottom: -30px;
+		width: 2px;
+		background: rgb(var(--gray-light));
+	}
+
+	.timeline-dot {
+		width: 20px;
+		height: 20px;
+		background: var(--accent);
+		border-radius: 50%;
+		flex-shrink: 0;
+		margin-top: 4px;
+		box-shadow: 0 0 0 4px var(--bg-card);
+	}
+
+	.timeline-content h3 {
+		margin: 0 0 0.3em 0;
+		font-size: 1.3em;
 		color: rgb(var(--black));
+		font-weight: 600;
 	}
 
 	.role {
-		font-weight: 600;
-		color: var(--accent-dark);
-		margin-bottom: 0.5em;
-	}
-
-	.timeline-item p:last-child {
-		margin-bottom: 0;
-		color: rgb(var(--gray-dark));
-	}
-
-	.early-work p {
-		margin-bottom: 1em;
-	}
-
-	.shader-note {
-		font-size: 0.9em;
+		font-size: 0.95em;
 		color: rgb(var(--gray));
-		margin-top: 2em;
-		padding-top: 1em;
-		border-top: 1px solid rgb(var(--gray-light));
+		font-weight: 600;
+		margin: 0 0 0.5em 0;
+	}
+
+	.description {
+		color: rgb(var(--gray-dark));
+		margin: 0;
+		line-height: 1.5;
 	}
 
 	@media (max-width: 720px) {
-		.hero h1 {
+		.hero-card {
+			padding: 2em 1.5em;
+		}
+
+		.greeting h1 {
 			font-size: 2.5em;
 		}
 
-		.subtitle {
-			font-size: 1.2em;
-		}
-
-		.bio {
+		.intro {
 			font-size: 1em;
 		}
 
-		section {
+		.cards-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.timeline-card {
 			padding: 1.5em;
 		}
 
-		.projects-grid {
-			grid-template-columns: 1fr;
+		h2 {
+			padding-left: 0;
 		}
 	}
 </style>
