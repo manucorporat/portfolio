@@ -641,9 +641,14 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	.wave-emoji {
 		display: inline-block;
 		transform-origin: 70% 70%;
+		cursor: pointer;
 	}
 
 	.wave-emoji.waving {
+		animation: wave-animation 0.6s ease-in-out;
+	}
+
+	.wave-emoji:hover {
 		animation: wave-animation 0.6s ease-in-out;
 	}
 
@@ -659,20 +664,23 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	}
 </style>
 
-<script>
-	function wave() {
+<script is:inline>
+	document.addEventListener('DOMContentLoaded', function() {
 		const emoji = document.querySelector('.wave-emoji');
 		if (emoji) {
+			// Wave immediately on page load
 			emoji.classList.add('waving');
 			setTimeout(() => {
 				emoji.classList.remove('waving');
 			}, 600);
+
+			// Add click handler for mobile
+			emoji.addEventListener('click', function() {
+				this.classList.add('waving');
+				setTimeout(() => {
+					this.classList.remove('waving');
+				}, 600);
+			});
 		}
-	}
-
-	// Wave on page load
-	setTimeout(wave, 1000);
-
-	// Wave every 10 seconds
-	setInterval(wave, 10000);
+	});
 </script>
