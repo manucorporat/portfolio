@@ -375,7 +375,11 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 	.hello-text {
 		font-family: 'Inter', sans-serif;
-		font-variation-settings: 'wght' var(--hello-weight), 'wdth' var(--hello-width);
+		font-variation-settings:
+			'wght' var(--hello-weight),
+			'wdth' var(--hello-width),
+			'slnt' var(--hello-slant),
+			'opsz' var(--hello-opsz);
 		will-change: font-variation-settings;
 		contain: layout style;
 	}
@@ -694,15 +698,28 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		const root = document.documentElement;
 		let currentStep = 0;
 		const steps = [
-			{ prop: '--hello-weight', start: 700, end: 900, duration: 800 },
-			{ prop: '--hello-weight', start: 900, end: 400, duration: 800 },
-			{ prop: '--hello-weight', start: 400, end: 700, duration: 800 },
-			{ prop: '--hello-width', start: 100, end: 75, duration: 600 },
-			{ prop: '--hello-width', start: 75, end: 115, duration: 600 },
-			{ prop: '--hello-width', start: 115, end: 100, duration: 600 },
-			{ prop: '--hello-weight', start: 700, end: 300, duration: 500 },
-			{ prop: '--hello-weight', start: 300, end: 800, duration: 500 },
-			{ prop: '--hello-weight', start: 800, end: 700, duration: 500 }
+			// Weight variations
+			{ prop: '--hello-weight', start: 700, end: 900, duration: 600 },
+			{ prop: '--hello-weight', start: 900, end: 300, duration: 600 },
+			{ prop: '--hello-weight', start: 300, end: 700, duration: 600 },
+
+			// Width variations
+			{ prop: '--hello-width', start: 100, end: 70, duration: 500 },
+			{ prop: '--hello-width', start: 70, end: 115, duration: 500 },
+			{ prop: '--hello-width', start: 115, end: 100, duration: 500 },
+
+			// Slant (italic) variations
+			{ prop: '--hello-slant', start: 0, end: -10, duration: 400 },
+			{ prop: '--hello-slant', start: -10, end: 0, duration: 400 },
+
+			// Optical size variations
+			{ prop: '--hello-opsz', start: 32, end: 14, duration: 500 },
+			{ prop: '--hello-opsz', start: 14, end: 32, duration: 500 },
+
+			// Combo moves
+			{ prop: '--hello-weight', start: 700, end: 200, duration: 400 },
+			{ prop: '--hello-weight', start: 200, end: 900, duration: 400 },
+			{ prop: '--hello-weight', start: 900, end: 700, duration: 400 }
 		];
 
 		function animateStep(stepIndex) {

@@ -12,6 +12,8 @@
 	--box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 	--hello-weight: 700;
 	--hello-width: 100;
+	--hello-slant: 0;
+	--hello-opsz: 32;
 }
 
 * {
