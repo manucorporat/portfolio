@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root {
 	--accent: #FFC300;
@@ -10,6 +11,8 @@
 	--bg-page: #E6E6E6;
 	--bg-card: #F5F5F5;
 	--box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+	--hello-weight: 700;
+	--hello-width: 100;
 }
 
 * {
