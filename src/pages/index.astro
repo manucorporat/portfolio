@@ -1,7 +1,7 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
+import ShaderBackground from '../components/ShaderBackground.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 ---
 
@@ -11,39 +11,749 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<Header />
+		<ShaderBackground />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			<section class="hero-container">
+				<div class="hero-header">
+					<h2 class="site-name"><a href="https://twitter.com/manucorporat" target="_blank">Manu</a></h2>
+					<nav class="nav-center">
+						<a href="/">Home</a>
+						<a href="/blog">Blog</a>
+						<a href="/about">About</a>
+					</nav>
+					<div class="social-links">
+						<a href="https://github.com/manucorporat" target="_blank">GitHub</a>
+						<a href="https://www.linkedin.com/in/manu-mart%C3%ADnez-almeida-5b390539/" target="_blank">LinkedIn</a>
+						<a href="https://twitter.com/manucorporat" target="_blank">Twitter</a>
+					</div>
+				</div>
+				
+				<div class="hero-content">
+					<h1><span class="hello-text">Hello</span> <span class="wave-emoji">👋</span></h1>
+					<p class="intro">
+						I'm <strong>Manu</strong>, an open source developer and tech innovator.
+						Creator of <a href="https://github.com/gin-gonic/gin" target="_blank">Gin</a>,
+						co-creator of <a href="https://qwik.dev" target="_blank">Qwik</a> and
+						<a href="https://stenciljs.com" target="_blank">Stencil</a>, and founder of
+						<a href="https://set.health" target="_blank">set.health</a>.
+					</p>
+				</div>
+
+				<div class="hero-footer">
+					<span class="location">Spain</span>
+				</div>
+			</section>
+
+			<section class="projects-section">
+				<h2>Featured Work</h2>
+				<div class="cards-grid">
+					<article class="project-card">
+						<div class="card-header">
+							<span class="project-date">2014 - Present</span>
+							<span class="project-id">ID 001</span>
+						</div>
+						<h3>
+							<a href="https://github.com/gin-gonic/gin" target="_blank">Gin</a>
+						</h3>
+						<p class="project-meta">Go Framework • 86.3k ★</p>
+						<p>
+							High-performance HTTP web framework for Go. Up to 40x faster than alternatives,
+							powering thousands of production applications worldwide.
+						</p>
+						<div class="card-badge"></div>
+					</article>
+
+					<article class="project-card">
+						<div class="card-header">
+							<span class="project-date">2022 - Present</span>
+							<span class="project-id">ID 002</span>
+						</div>
+						<h3>
+							<a href="https://github.com/QwikDev/qwik" target="_blank">Qwik</a>
+						</h3>
+						<p class="project-meta">Web Framework • 21.7k ★</p>
+						<p>
+							Instant-loading web apps without effort. Revolutionary framework that delivers
+							O(1) loading time regardless of application complexity.
+						</p>
+						<div class="card-badge"></div>
+					</article>
+
+					<article class="project-card">
+						<div class="card-header">
+							<span class="project-date">2016 - 2022</span>
+							<span class="project-id">ID 003</span>
+						</div>
+						<h3>
+							<a href="https://github.com/ionic-team/ionic-framework" target="_blank">Ionic</a>
+						</h3>
+						<p class="project-meta">Mobile Framework • 52.1k ★</p>
+						<p>
+							Core developer of the powerful cross-platform UI toolkit for building native-quality
+							iOS, Android, and Progressive Web Apps.
+						</p>
+						<div class="card-badge"></div>
+					</article>
+
+					<article class="project-card">
+						<div class="card-header">
+							<span class="project-date">2017 - 2022</span>
+							<span class="project-id">ID 004</span>
+						</div>
+						<h3>
+							<a href="https://github.com/stenciljs/core" target="_blank">Stencil</a>
+						</h3>
+						<p class="project-meta">Web Components • 12.9k ★</p>
+						<p>
+							Co-creator of the toolchain for building scalable, enterprise-ready component systems
+							on top of Web Components.
+						</p>
+						<div class="card-badge"></div>
+					</article>
+
+					<article class="project-card">
+						<div class="card-header">
+							<span class="project-date">2023 - Present</span>
+							<span class="project-id">ID 005</span>
+						</div>
+						<h3>
+							<a href="https://set.health" target="_blank">set.health</a>
+						</h3>
+						<p class="project-meta">Healthcare Tech • Founder</p>
+						<p>
+							Healthcare technology startup focused on improving patient care through innovative
+							digital solutions.
+						</p>
+						<div class="card-badge"></div>
+					</article>
+
+					<article class="project-card">
+						<div class="card-header">
+							<span class="project-date">2015 - Present</span>
+							<span class="project-id">ID 006</span>
+						</div>
+						<h3>
+							<a href="https://github.com/manucorporat/sse" target="_blank">SSE</a>
+						</h3>
+						<p class="project-meta">Real-time • 278 ★</p>
+						<p>
+							Server-Sent Events implementation in Go, used by the Gin framework for real-time
+							communication.
+						</p>
+						<div class="card-badge"></div>
+					</article>
+				</div>
+			</section>
+
+			<section class="timeline-section">
+				<h2>Open Source</h2>
+				<div class="timeline-card">
+					<div class="timeline-items">
+						<div class="timeline-item">
+							<div class="timeline-dot"></div>
+							<div class="timeline-content">
+								<h3>Gin Framework</h3>
+								<p class="role">Creator & Maintainer</p>
+								<p class="description">Created the most popular Go web framework with 86k+ stars</p>
+							</div>
+						</div>
+
+						<div class="timeline-item">
+							<div class="timeline-dot"></div>
+							<div class="timeline-content">
+								<h3>Qwik</h3>
+								<p class="role">Co-creator</p>
+								<p class="description">Revolutionary framework for instant-loading web applications</p>
+							</div>
+						</div>
+
+						<div class="timeline-item">
+							<div class="timeline-dot"></div>
+							<div class="timeline-content">
+								<h3>Stencil</h3>
+								<p class="role">Co-creator</p>
+								<p class="description">Web Components compiler for building design systems</p>
+							</div>
+						</div>
+
+						<div class="timeline-item">
+							<div class="timeline-dot"></div>
+							<div class="timeline-content">
+								<h3>Ionic Framework</h3>
+								<p class="role">Core Developer</p>
+								<p class="description">Core contributor to cross-platform framework with 52k+ stars</p>
+							</div>
+						</div>
+
+						<div class="timeline-item">
+							<div class="timeline-dot"></div>
+							<div class="timeline-content">
+								<h3>HTML Specification</h3>
+								<p class="role">Contributor</p>
+								<p class="description">Contributed to the evolution of web standards</p>
+							</div>
+						</div>
+
+						<div class="timeline-item">
+							<div class="timeline-dot"></div>
+							<div class="timeline-content">
+								<h3>Cocos2d</h3>
+								<p class="role">Top Contributor</p>
+								<p class="description">Major contributions to the game development framework</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="timeline-section">
+				<h2>Products Shipped</h2>
+				<div class="timeline-card">
+					<div class="timeline-items">
+						<div class="timeline-item">
+							<div class="timeline-dot"></div>
+							<div class="timeline-content">
+								<h3>set.health</h3>
+								<p class="role">Founder & CEO</p>
+								<p class="description">Healthcare technology startup improving patient care through digital solutions</p>
+							</div>
+						</div>
+
+						<div class="timeline-item">
+							<div class="timeline-dot"></div>
+							<div class="timeline-content">
+								<h3>Builder.io</h3>
+								<p class="role">Senior Engineer</p>
+								<p class="description">Building cutting-edge web technologies and developer tools</p>
+							</div>
+						</div>
+
+						<div class="timeline-item">
+							<div class="timeline-dot"></div>
+							<div class="timeline-content">
+								<h3>Infinity Field</h3>
+								<p class="role">Founder & Developer</p>
+								<p class="description">Dual-stick shooter for iOS featured by IGN and major gaming outlets</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="timeline-section">
+				<h2>Conferences</h2>
+				<div class="timeline-card">
+					<div class="timeline-items">
+						<div class="timeline-item">
+							<div class="timeline-dot"></div>
+							<div class="timeline-content">
+								<h3>JSConf</h3>
+								<p class="role">Speaker</p>
+								<p class="description">Web performance and framework architecture</p>
+							</div>
+						</div>
+
+						<div class="timeline-item">
+							<div class="timeline-dot"></div>
+							<div class="timeline-content">
+								<h3>GopherCon</h3>
+								<p class="role">Speaker</p>
+								<p class="description">Building high-performance web frameworks in Go</p>
+							</div>
+						</div>
+
+						<div class="timeline-item">
+							<div class="timeline-dot"></div>
+							<div class="timeline-content">
+								<h3>ng-conf</h3>
+								<p class="role">Speaker</p>
+								<p class="description">Web Components and modern component systems</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+	main {
+		position: relative;
+		z-index: 1;
+		padding: 2em 1.5em;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.hero-container {
+		background: rgba(255, 255, 255, 0.7);
+		backdrop-filter: blur(20px) saturate(1.5);
+		-webkit-backdrop-filter: blur(20px) saturate(1.5);
+		border: 1px solid rgba(255, 255, 255, 0.5);
+		border-radius: 20px;
+		padding: 2.5em;
+		margin-bottom: 2em;
+		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+		            0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+		min-height: 65vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.hero-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		margin-bottom: 3em;
+	}
+
+	.site-name {
+		margin: 0;
+		font-size: 1.1em;
+		font-weight: 700;
+	}
+
+	.site-name a {
+		color: rgb(var(--black));
+		text-decoration: none;
+	}
+
+	.nav-center {
+		display: flex;
+		gap: 2em;
+		align-items: center;
+	}
+
+	.nav-center a {
+		color: rgb(var(--gray-dark));
+		text-decoration: none;
+		font-weight: 500;
+		font-size: 0.95em;
+		transition: color 0.2s;
+	}
+
+	.nav-center a:hover {
+		color: rgb(var(--black));
+	}
+
+	.social-links {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5em;
+		align-items: flex-end;
+	}
+
+	.social-links a {
+		color: rgb(var(--gray-dark));
+		text-decoration: none;
+		font-size: 0.9em;
+		transition: color 0.2s;
+	}
+
+	.social-links a:hover {
+		color: rgb(var(--black));
+	}
+
+	.hero-content {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		max-width: 700px;
+	}
+
+	.hero-content h1 {
+		font-size: 7em;
+		margin-bottom: 0.4em;
+		color: rgb(var(--black));
+		font-weight: 700;
+		line-height: 1.1;
+	}
+
+	.hello-text {
+		font-family: 'Inter', sans-serif;
+		font-variation-settings:
+			'wght' var(--hello-weight),
+			'wdth' var(--hello-width),
+			'slnt' var(--hello-slant),
+			'opsz' var(--hello-opsz);
+		will-change: font-variation-settings;
+		contain: layout style;
+		display: inline-block;
+	}
+
+	.intro {
+		font-size: 1.25em;
+		line-height: 1.7;
+		color: rgb(var(--gray-dark));
+	}
+
+	.intro strong {
+		color: rgb(var(--black));
+		font-weight: 600;
+	}
+
+	.intro a {
+		color: rgb(var(--black));
+		text-decoration: underline;
+		text-decoration-color: var(--accent);
+		text-decoration-thickness: 2px;
+		text-underline-offset: 3px;
+	}
+
+	.intro a:hover {
+		color: var(--accent-dark);
+		text-decoration-color: var(--accent-dark);
+	}
+
+	.hero-footer {
+		display: flex;
+		justify-content: flex-end;
+		margin-top: 2em;
+	}
+
+	.location {
+		font-size: 0.9em;
+		color: rgb(var(--gray));
+		font-style: italic;
+	}
+
+	.projects-section,
+	.timeline-section {
+		margin-bottom: 2em;
+	}
+
+	h2 {
+		font-size: 1.5em;
+		margin-bottom: 1.5em;
+		color: rgb(var(--black));
+		font-weight: 600;
+		padding-left: 0.5em;
+	}
+
+	.cards-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+		gap: 1.5em;
+	}
+
+	.project-card {
+		background: rgba(255, 255, 255, 0.65);
+		backdrop-filter: blur(15px) saturate(1.4);
+		-webkit-backdrop-filter: blur(15px) saturate(1.4);
+		border: 1px solid rgba(255, 255, 255, 0.4);
+		border-radius: 20px;
+		padding: 2em;
+		box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08),
+		            0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+		position: relative;
+		transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+	}
+
+	.project-card:hover {
+		transform: translateY(-2px);
+		background: rgba(255, 255, 255, 0.75);
+		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12),
+		            0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+	}
+
+	.card-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 1em;
+		font-size: 0.8em;
+	}
+
+	.project-date {
+		color: rgb(var(--gray));
+		font-weight: 400;
+	}
+
+	.project-id {
+		color: rgb(var(--gray));
+		font-weight: 600;
+	}
+
+	.project-card h3 {
+		margin: 0 0 0.5em 0;
+		font-size: 1.8em;
+		font-weight: 700;
+	}
+
+	.project-card h3 a {
+		color: rgb(var(--black));
+		text-decoration: none;
+	}
+
+	.project-card h3 a:hover {
+		color: var(--accent-dark);
+	}
+
+	.project-meta {
+		font-size: 0.85em;
+		color: rgb(var(--gray));
+		font-weight: 600;
+		margin: 0 0 1em 0;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.project-card p:last-of-type {
+		color: rgb(var(--gray-dark));
+		line-height: 1.6;
+		margin: 0;
+		padding-bottom: 2em;
+	}
+
+	.card-badge {
+		position: absolute;
+		bottom: 1.5em;
+		right: 1.5em;
+		width: 12px;
+		height: 12px;
+		background: var(--accent);
+		border-radius: 50%;
+	}
+
+	.timeline-card {
+		background: rgba(255, 255, 255, 0.65);
+		backdrop-filter: blur(15px) saturate(1.4);
+		-webkit-backdrop-filter: blur(15px) saturate(1.4);
+		border: 1px solid rgba(255, 255, 255, 0.4);
+		border-radius: 20px;
+		padding: 2.5em;
+		box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08),
+		            0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+	}
+
+	.timeline-items {
+		display: flex;
+		flex-direction: column;
+		gap: 2em;
+	}
+
+	.timeline-item {
+		display: flex;
+		gap: 1.5em;
+		position: relative;
+	}
+
+	.timeline-item:not(:last-child)::after {
+		content: '';
+		position: absolute;
+		left: 9px;
+		top: 30px;
+		bottom: -30px;
+		width: 2px;
+		background: rgb(var(--gray-light));
+	}
+
+	.timeline-dot {
+		width: 20px;
+		height: 20px;
+		background: var(--accent);
+		border-radius: 50%;
+		flex-shrink: 0;
+		margin-top: 4px;
+		box-shadow: 0 0 0 4px var(--bg-card);
+	}
+
+	.timeline-content h3 {
+		margin: 0 0 0.3em 0;
+		font-size: 1.3em;
+		color: rgb(var(--black));
+		font-weight: 600;
+	}
+
+	.role {
+		font-size: 0.95em;
+		color: rgb(var(--gray));
+		font-weight: 600;
+		margin: 0 0 0.5em 0;
+	}
+
+	.description {
+		color: rgb(var(--gray-dark));
+		margin: 0;
+		line-height: 1.5;
+	}
+
+	@media (max-width: 900px) {
+		.hero-header {
+			flex-direction: column;
+			gap: 1.5em;
+		}
+
+		.nav-center {
+			order: 2;
+			gap: 1.5em;
+		}
+
+		.social-links {
+			order: 1;
+			flex-direction: row;
+			align-items: center;
+			align-self: flex-start;
+			gap: 1.5em;
+		}
+
+		.hero-content h1 {
+			font-size: 4.5em;
+		}
+
+		.intro {
+			font-size: 1.1em;
+		}
+	}
+
+	@media (max-width: 720px) {
+		main {
+			padding: 1em;
+		}
+
+		.hero-container {
+			padding: 2em 1.5em;
+			min-height: auto;
+		}
+
+		.hero-content h1 {
+			font-size: 3.5em;
+		}
+
+		.intro {
+			font-size: 1em;
+		}
+
+		.cards-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.timeline-card {
+			padding: 1.5em;
+		}
+
+		h2 {
+			padding-left: 0;
+		}
+
+		.nav-center {
+			gap: 1em;
+		}
+
+		.nav-center a,
+		.social-links a {
+			font-size: 0.85em;
+		}
+	}
+
+	.wave-emoji {
+		display: inline-block;
+		transform-origin: 70% 70%;
+		cursor: pointer;
+	}
+
+	.wave-emoji.waving {
+		animation: wave-animation 0.6s ease-in-out;
+	}
+
+	.wave-emoji:hover {
+		animation: wave-animation 0.6s ease-in-out;
+	}
+
+	@keyframes wave-animation {
+		0% { transform: rotate(0deg); }
+		10% { transform: rotate(14deg); }
+		20% { transform: rotate(-8deg); }
+		30% { transform: rotate(14deg); }
+		40% { transform: rotate(-4deg); }
+		50% { transform: rotate(10deg); }
+		60% { transform: rotate(0deg); }
+		100% { transform: rotate(0deg); }
+	}
+</style>
+
+<script is:inline>
+	document.addEventListener('DOMContentLoaded', function() {
+		const emoji = document.querySelector('.wave-emoji');
+		if (emoji) {
+			// Wave immediately on page load
+			emoji.classList.add('waving');
+			setTimeout(() => {
+				emoji.classList.remove('waving');
+			}, 600);
+
+			// Add click handler for mobile
+			emoji.addEventListener('click', function() {
+				this.classList.add('waving');
+				setTimeout(() => {
+					this.classList.remove('waving');
+				}, 600);
+			});
+		}
+
+		// Sequential variable font animation with pauses
+		const root = document.documentElement;
+		let currentStep = 0;
+		const steps = [
+			// Extreme weight changes
+			{ prop: '--hello-weight', start: 700, end: 900, duration: 1000, pause: 4000 },
+			{ prop: '--hello-weight', start: 900, end: 200, duration: 1000, pause: 4000 },
+			{ prop: '--hello-weight', start: 200, end: 700, duration: 1000, pause: 4000 },
+
+			// Extreme width changes
+			{ prop: '--hello-width', start: 100, end: 62, duration: 900, pause: 4000 },
+			{ prop: '--hello-width', start: 62, end: 125, duration: 900, pause: 4000 },
+			{ prop: '--hello-width', start: 125, end: 100, duration: 900, pause: 4000 },
+
+			// Extreme slant changes
+			{ prop: '--hello-slant', start: 0, end: -10, duration: 800, pause: 4000 },
+			{ prop: '--hello-slant', start: -10, end: 0, duration: 800, pause: 4000 },
+
+			// Extreme optical size (height) changes
+			{ prop: '--hello-opsz', start: 32, end: 14, duration: 900, pause: 4000 },
+			{ prop: '--hello-opsz', start: 14, end: 32, duration: 900, pause: 4000 },
+
+			// Super thin to super bold
+			{ prop: '--hello-weight', start: 700, end: 100, duration: 1000, pause: 4000 },
+			{ prop: '--hello-weight', start: 100, end: 900, duration: 1000, pause: 4000 },
+			{ prop: '--hello-weight', start: 900, end: 700, duration: 1000, pause: 4000 }
+		];
+
+		function animateStep(stepIndex) {
+			const step = steps[stepIndex];
+			const startTime = performance.now();
+
+			function animate(currentTime) {
+				const elapsed = currentTime - startTime;
+				const progress = Math.min(elapsed / step.duration, 1);
+
+				// Easing function for smooth animation
+				const eased = progress < 0.5
+					? 2 * progress * progress
+					: 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+				const value = step.start + (step.end - step.start) * eased;
+				root.style.setProperty(step.prop, value);
+
+				if (progress < 1) {
+					requestAnimationFrame(animate);
+				} else {
+					// Wait (pause) before next step
+					setTimeout(() => {
+						currentStep = (currentStep + 1) % steps.length;
+						animateStep(currentStep);
+					}, step.pause);
+				}
+			}
+
+			requestAnimationFrame(animate);
+		}
+
+		// Start animation sequence
+		setTimeout(() => animateStep(0), 1000);
+	});
+</script>

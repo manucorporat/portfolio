@@ -1,63 +1,442 @@
 ---
-import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
-import Layout from '../layouts/BlogPost.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import ShaderBackground from '../components/ShaderBackground.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage={AboutHeroImage}
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`About | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<ShaderBackground />
+		<main>
+			<nav class="top-nav">
+				<h2 class="site-name"><a href="https://twitter.com/manucorporat" target="_blank">Manu</a></h2>
+				<div class="nav-center">
+					<a href="/">Home</a>
+					<a href="/blog">Blog</a>
+					<a href="/about" class="active">About</a>
+				</div>
+				<div class="social-links">
+					<a href="https://github.com/manucorporat" target="_blank">GitHub</a>
+					<a href="https://www.linkedin.com/in/manu-mart%C3%ADnez-almeida-5b390539/" target="_blank">LinkedIn</a>
+					<a href="https://twitter.com/manucorporat" target="_blank">Twitter</a>
+				</div>
+			</nav>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+			<article class="about-page">
+				<section class="intro-card">
+					<h1>About Me</h1>
+					<p class="lead">
+						I'm Manu (Manuel Martínez-Almeida), an open-source developer from Spain with a passion for
+						creating tools that empower developers worldwide.
+					</p>
+				</section>
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
+				<section class="content-card">
+					<h2>My Journey</h2>
+					<p>
+						My coding journey started at a young age. At 15, I founded FORZEFIELD Studios and developed
+						<strong>Infinity Field</strong>, a dual-stick shooter for iOS that featured innovative multiplayer
+						capabilities through Joypad SDK integration. The game was featured by IGN, AppSpy, and other
+						major gaming outlets.
+					</p>
+					<p>
+						From those early days developing games with Cocos2d (where I became a top contributor), I
+						transitioned into web technologies and open source, where I found my true calling: building
+						tools that make other developers' lives easier.
+					</p>
+				</section>
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
+				<section class="content-card">
+					<h2>Major Projects</h2>
+					
+					<div class="project-list">
+						<div class="project-item">
+							<div class="project-header">
+								<h3>Gin</h3>
+								<span class="year">2014 - Present</span>
+							</div>
+							<p>
+								Created Gin, a high-performance HTTP web framework for Go that became the most popular
+								web framework in the Go ecosystem with over 86,000 stars on GitHub. Gin provides a
+								Martini-like API with performance up to 40 times faster, thanks to httprouter. It's now
+								used by thousands of companies worldwide to build production APIs and web services.
+							</p>
+						</div>
 
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
-</Layout>
+						<div class="project-item">
+							<div class="project-header">
+								<h3>Qwik</h3>
+								<span class="year">Co-creator</span>
+							</div>
+							<p>
+								Co-created Qwik, a revolutionary framework that delivers instant-loading web applications
+								with O(1) loading time regardless of application complexity. Qwik fundamentally rethinks
+								how we build web applications by introducing resumability and fine-grained lazy loading.
+							</p>
+						</div>
+
+						<div class="project-item">
+							<div class="project-header">
+								<h3>Stencil</h3>
+								<span class="year">Co-creator</span>
+							</div>
+							<p>
+								Co-created Stencil, a toolchain for building scalable, enterprise-ready component systems
+								on top of TypeScript and Web Component standards. Stencil components compile to highly
+								optimized Web Components that work seamlessly across React, Angular, Vue, and other
+								frameworks.
+							</p>
+						</div>
+
+						<div class="project-item">
+							<div class="project-header">
+								<h3>Ionic Framework</h3>
+								<span class="year">Core Developer</span>
+							</div>
+							<p>
+								Served as a core developer on Ionic Framework, one of the most popular cross-platform
+								UI toolkits with over 52,000 stars. Contributed to building a powerful framework that
+								enables developers to create native-quality iOS, Android, and Progressive Web Apps.
+							</p>
+						</div>
+					</div>
+				</section>
+
+				<section class="content-card">
+					<h2>Contributions & Impact</h2>
+					<ul class="contributions-list">
+						<li>
+							<strong>HTML Specification Contributor:</strong> Contributed to the evolution of web
+							standards, helping shape the future of the web platform.
+						</li>
+						<li>
+							<strong>Conference Speaker:</strong> Shared knowledge and insights at various technical
+							conferences about web performance, framework architecture, and modern development practices.
+						</li>
+						<li>
+							<strong>Open Source Advocate:</strong> Maintained and contributed to numerous open-source
+							projects, with collective stars exceeding 200,000 across my repositories.
+						</li>
+						<li>
+							<strong>Community Builder:</strong> Active in helping developers through GitHub issues,
+							discussions, and mentoring.
+						</li>
+					</ul>
+				</section>
+
+				<section class="content-card">
+					<h2>Current Focus</h2>
+					<p>
+						Today, I work at <strong>Builder.io</strong>, where I continue to push the boundaries of
+						web development. I'm also the founder of <strong>set.health</strong>, a healthcare technology
+						startup focused on improving patient care through innovative digital solutions.
+					</p>
+					<p>
+						Beyond my professional work, I maintain a passion for WebGL and shader programming, creating
+						interactive visual experiences that explore the artistic side of code.
+					</p>
+				</section>
+
+				<section class="content-card skills-card">
+					<h2>Technical Expertise</h2>
+					<div class="skills-grid">
+						<div class="skill-item">
+							<h4>Languages</h4>
+							<p>Go, TypeScript, JavaScript, GLSL</p>
+						</div>
+						<div class="skill-item">
+							<h4>Frameworks</h4>
+							<p>Qwik, Stencil, Ionic, Astro, React</p>
+						</div>
+						<div class="skill-item">
+							<h4>Specialties</h4>
+							<p>Web Performance, Framework Architecture, WebGL</p>
+						</div>
+						<div class="skill-item">
+							<h4>Focus Areas</h4>
+							<p>Developer Experience, Open Source, Web Standards</p>
+						</div>
+					</div>
+				</section>
+			</article>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		padding: 2em 1.5em;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.top-nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 2em;
+	}
+
+	.site-name {
+		margin: 0;
+		font-size: 1.1em;
+		font-weight: 700;
+	}
+
+	.site-name a {
+		color: rgb(var(--black));
+		text-decoration: none;
+	}
+
+	.nav-center {
+		display: flex;
+		gap: 2em;
+		align-items: center;
+	}
+
+	.nav-center a {
+		color: rgb(var(--gray-dark));
+		text-decoration: none;
+		font-weight: 500;
+		font-size: 0.95em;
+		transition: color 0.2s;
+	}
+
+	.nav-center a:hover,
+	.nav-center a.active {
+		color: rgb(var(--black));
+	}
+
+	.social-links {
+		display: flex;
+		gap: 1.5em;
+		align-items: center;
+	}
+
+	.social-links a {
+		color: rgb(var(--gray-dark));
+		text-decoration: none;
+		font-size: 0.9em;
+		transition: color 0.2s;
+	}
+
+	.social-links a:hover {
+		color: rgb(var(--black));
+	}
+
+	.about-page {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+	.intro-card {
+		background: rgba(255, 255, 255, 0.7);
+		backdrop-filter: blur(20px) saturate(1.5);
+		-webkit-backdrop-filter: blur(20px) saturate(1.5);
+		border: 1px solid rgba(255, 255, 255, 0.5);
+		border-radius: 20px;
+		padding: 3em 2.5em;
+		margin-bottom: 2em;
+		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+		            0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+		text-align: center;
+	}
+
+	.intro-card h1 {
+		font-size: 3em;
+		margin-bottom: 0.5em;
+		color: rgb(var(--black));
+		font-weight: 700;
+	}
+
+	.lead {
+		font-size: 1.2em;
+		line-height: 1.7;
+		color: rgb(var(--gray-dark));
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.content-card {
+		background: rgba(255, 255, 255, 0.65);
+		backdrop-filter: blur(15px) saturate(1.4);
+		-webkit-backdrop-filter: blur(15px) saturate(1.4);
+		border: 1px solid rgba(255, 255, 255, 0.4);
+		border-radius: 20px;
+		padding: 2.5em;
+		margin-bottom: 2em;
+		box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08),
+		            0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+	}
+
+	.content-card h2 {
+		font-size: 1.8em;
+		margin-bottom: 1em;
+		color: rgb(var(--black));
+		font-weight: 600;
+	}
+
+	.content-card p {
+		line-height: 1.7;
+		color: rgb(var(--gray-dark));
+		margin-bottom: 1em;
+	}
+
+	.content-card p:last-child {
+		margin-bottom: 0;
+	}
+
+	.content-card strong {
+		color: rgb(var(--black));
+	}
+
+	.project-list {
+		display: flex;
+		flex-direction: column;
+		gap: 2em;
+	}
+
+	.project-item {
+		padding-bottom: 2em;
+		border-bottom: 1px solid rgb(var(--gray-light));
+	}
+
+	.project-item:last-child {
+		border-bottom: none;
+		padding-bottom: 0;
+	}
+
+	.project-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		margin-bottom: 0.8em;
+	}
+
+	.project-header h3 {
+		margin: 0;
+		font-size: 1.5em;
+		color: rgb(var(--black));
+		font-weight: 600;
+	}
+
+	.year {
+		font-size: 0.9em;
+		color: rgb(var(--gray));
+		font-weight: 600;
+	}
+
+	.project-item p {
+		margin: 0;
+	}
+
+	.contributions-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.contributions-list li {
+		padding: 1em 0;
+		border-bottom: 1px solid rgb(var(--gray-light));
+		line-height: 1.6;
+		color: rgb(var(--gray-dark));
+	}
+
+	.contributions-list li:last-child {
+		border-bottom: none;
+	}
+
+	.contributions-list strong {
+		color: rgb(var(--black));
+		display: block;
+		margin-bottom: 0.3em;
+	}
+
+	.skills-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 1.5em;
+	}
+
+	.skill-item {
+		padding: 1.5em;
+		background: rgba(255, 255, 255, 0.4);
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+		border: 1px solid rgba(255, 255, 255, 0.3);
+		border-radius: 12px;
+		box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+	}
+
+	.skill-item h4 {
+		margin: 0 0 0.8em 0;
+		font-size: 1.1em;
+		color: rgb(var(--black));
+		font-weight: 600;
+	}
+
+	.skill-item p {
+		margin: 0;
+		color: rgb(var(--gray-dark));
+		line-height: 1.5;
+	}
+
+	@media (max-width: 900px) {
+		.top-nav {
+			flex-direction: column;
+			gap: 1.5em;
+			align-items: flex-start;
+		}
+
+		.social-links {
+			align-self: flex-start;
+		}
+	}
+
+	@media (max-width: 720px) {
+		main {
+			padding: 1em;
+		}
+
+		.intro-card {
+			padding: 2em 1.5em;
+		}
+
+		.intro-card h1 {
+			font-size: 2.2em;
+		}
+
+		.lead {
+			font-size: 1.1em;
+		}
+
+		.content-card {
+			padding: 1.5em;
+		}
+
+		.project-header {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 0.3em;
+		}
+
+		.skills-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.social-links {
+			display: none;
+		}
+
+		.nav-center {
+			gap: 1em;
+		}
+	}
+</style>
