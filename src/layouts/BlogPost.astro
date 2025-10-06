@@ -4,7 +4,7 @@ import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
-import Header from '../components/Header.astro';
+import ShaderBackground from '../components/ShaderBackground.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
@@ -14,73 +14,207 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 <html lang="en">
 	<head>
 		<BaseHead title={title} description={description} />
-		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
-			.hero-image {
-				width: 100%;
-			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
-			}
-			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
-			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
-		</style>
 	</head>
 
 	<body>
-		<Header />
-		<main>
-			<article>
-				<div class="hero-image">
-					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
+		<ShaderBackground />
+		<div class="container">
+			<nav class="top-nav">
+				<h2 class="site-name"><a href="/">Manu MA</a></h2>
+				<div class="nav-center">
+					<a href="/">Home</a>
+					<a href="/blog">Blog</a>
+					<a href="/about">About</a>
 				</div>
-				<div class="prose">
-					<div class="title">
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
+				<div class="social-links">
+					<a href="https://github.com/manucorporat" target="_blank">GitHub</a>
+					<a href="https://www.linkedin.com/in/manu-mart%C3%ADnez-almeida-5b390539/" target="_blank">LinkedIn</a>
+					<a href="https://twitter.com/manucorporat" target="_blank">Twitter</a>
+				</div>
+			</nav>
+
+			<main>
+				<article class="post-container">
+					{heroImage && (
+						<div class="hero-image">
+							<Image width={1020} height={510} src={heroImage} alt="" />
 						</div>
-						<h1>{title}</h1>
-						<hr />
+					)}
+					<div class="post-content">
+						<header class="post-header">
+							<div class="date">
+								<FormattedDate date={pubDate} />
+								{
+									updatedDate && (
+										<div class="last-updated-on">
+											Last updated on <FormattedDate date={updatedDate} />
+										</div>
+									)
+								}
+							</div>
+							<h1>{title}</h1>
+						</header>
+						<div class="prose">
+							<slot />
+						</div>
 					</div>
-					<slot />
-				</div>
-			</article>
-		</main>
+				</article>
+			</main>
+		</div>
 		<Footer />
 	</body>
 </html>
+
+<style>
+	.container {
+		padding: 2em 1.5em;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.top-nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 2em;
+	}
+
+	.site-name {
+		margin: 0;
+		font-size: 1.1em;
+		font-weight: 700;
+	}
+
+	.site-name a {
+		color: rgb(var(--black));
+		text-decoration: none;
+	}
+
+	.nav-center {
+		display: flex;
+		gap: 2em;
+		align-items: center;
+	}
+
+	.nav-center a {
+		color: rgb(var(--gray-dark));
+		text-decoration: none;
+		font-weight: 500;
+		font-size: 0.95em;
+		transition: color 0.2s;
+	}
+
+	.nav-center a:hover {
+		color: rgb(var(--black));
+	}
+
+	.social-links {
+		display: flex;
+		gap: 1.5em;
+		align-items: center;
+	}
+
+	.social-links a {
+		color: rgb(var(--gray-dark));
+		text-decoration: none;
+		font-size: 0.9em;
+		transition: color 0.2s;
+	}
+
+	.social-links a:hover {
+		color: rgb(var(--black));
+	}
+
+	main {
+		width: 100%;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.post-container {
+		background: var(--bg-card);
+		border-radius: 18px;
+		overflow: hidden;
+		box-shadow: var(--box-shadow);
+	}
+
+	.hero-image {
+		width: 100%;
+	}
+
+	.hero-image img {
+		width: 100%;
+		height: auto;
+		display: block;
+		border-radius: 0;
+	}
+
+	.post-content {
+		padding: 2.5em;
+	}
+
+	.post-header {
+		margin-bottom: 2em;
+		padding-bottom: 1.5em;
+		border-bottom: 2px solid rgb(var(--gray-light));
+	}
+
+	.post-header h1 {
+		margin: 0.5em 0 0 0;
+		color: rgb(var(--black));
+		font-size: 2.5em;
+		font-weight: 700;
+		line-height: 1.2;
+	}
+
+	.date {
+		color: rgb(var(--gray));
+		font-size: 0.95em;
+		font-weight: 500;
+	}
+
+	.last-updated-on {
+		font-style: italic;
+		margin-top: 0.3em;
+		font-size: 0.9em;
+	}
+
+	.prose {
+		line-height: 1.7;
+		color: rgb(var(--gray-dark));
+	}
+
+	@media (max-width: 900px) {
+		.top-nav {
+			flex-direction: column;
+			gap: 1.5em;
+			align-items: flex-start;
+		}
+
+		.social-links {
+			align-self: flex-start;
+		}
+	}
+
+	@media (max-width: 720px) {
+		.container {
+			padding: 1em;
+		}
+
+		.post-content {
+			padding: 1.5em;
+		}
+
+		.post-header h1 {
+			font-size: 2em;
+		}
+
+		.social-links {
+			display: none;
+		}
+
+		.nav-center {
+			gap: 1em;
+		}
+	}
+</style>
