@@ -690,27 +690,52 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 			});
 		}
 
-		// Variable font animation
+		// Sequential variable font animation
 		const root = document.documentElement;
-		let time = 0;
+		let currentStep = 0;
+		const steps = [
+			{ prop: '--hello-weight', start: 700, end: 900, duration: 800 },
+			{ prop: '--hello-weight', start: 900, end: 400, duration: 800 },
+			{ prop: '--hello-weight', start: 400, end: 700, duration: 800 },
+			{ prop: '--hello-width', start: 100, end: 75, duration: 600 },
+			{ prop: '--hello-width', start: 75, end: 115, duration: 600 },
+			{ prop: '--hello-width', start: 115, end: 100, duration: 600 },
+			{ prop: '--hello-weight', start: 700, end: 300, duration: 500 },
+			{ prop: '--hello-weight', start: 300, end: 800, duration: 500 },
+			{ prop: '--hello-weight', start: 800, end: 700, duration: 500 }
+		];
 
-		function animateFont() {
-			time += 0.015;
+		function animateStep(stepIndex) {
+			const step = steps[stepIndex];
+			const startTime = performance.now();
 
-			// Smooth oscillation for weight (600-900)
-			const weight = 700 + Math.sin(time) * 150;
+			function animate(currentTime) {
+				const elapsed = currentTime - startTime;
+				const progress = Math.min(elapsed / step.duration, 1);
 
-			// Subtle width variation (95-105)
-			const width = 100 + Math.sin(time * 0.7) * 5;
+				// Easing function for smooth animation
+				const eased = progress < 0.5
+					? 2 * progress * progress
+					: 1 - Math.pow(-2 * progress + 2, 2) / 2;
 
-			// Update CSS custom properties (no layout invalidation)
-			root.style.setProperty('--hello-weight', weight);
-			root.style.setProperty('--hello-width', width);
+				const value = step.start + (step.end - step.start) * eased;
+				root.style.setProperty(step.prop, value);
 
-			requestAnimationFrame(animateFont);
+				if (progress < 1) {
+					requestAnimationFrame(animate);
+				} else {
+					// Wait 200ms before next step
+					setTimeout(() => {
+						currentStep = (currentStep + 1) % steps.length;
+						animateStep(currentStep);
+					}, 200);
+				}
+			}
+
+			requestAnimationFrame(animate);
 		}
 
-		// Start animation
-		requestAnimationFrame(animateFont);
+		// Start animation sequence
+		setTimeout(() => animateStep(0), 500);
 	});
 </script>
