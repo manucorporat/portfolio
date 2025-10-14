@@ -1,0 +1,167 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
+
+// Check authentication
+const authToken = Astro.cookies.get('auth-token');
+if (!authToken?.value) {
+  return Astro.redirect('/login');
+}
+
+// Decode user info from token (simple demo)
+let userEmail = '';
+try {
+  const decoded = atob(authToken.value);
+  userEmail = decoded.split(':')[0];
+} catch (e) {
+  // Invalid token, redirect to login
+  Astro.cookies.delete('auth-token');
+  return Astro.redirect('/login');
+}
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={`Dashboard - ${SITE_TITLE}`} description="User dashboard" />
+  </head>
+  <body>
+    <Header />
+    <main class="dashboard-container">
+      <div class="dashboard-header">
+        <h1 class="dashboard-title">Welcome to your Dashboard</h1>
+        <p class="user-info">Logged in as: <span class="user-email">{userEmail}</span></p>
+      </div>
+      
+      <div class="dashboard-content">
+        <div class="dashboard-card">
+          <h2 class="card-title">Profile</h2>
+          <p class="card-description">Manage your account settings and preferences.</p>
+          <button class="card-action" disabled>Coming Soon</button>
+        </div>
+        
+        <div class="dashboard-card">
+          <h2 class="card-title">Posts</h2>
+          <p class="card-description">Create and manage your blog posts.</p>
+          <a href="/blog" class="card-action">View Blog</a>
+        </div>
+        
+        <div class="dashboard-card">
+          <h2 class="card-title">Analytics</h2>
+          <p class="card-description">View your site's performance metrics.</p>
+          <button class="card-action" disabled>Coming Soon</button>
+        </div>
+      </div>
+      
+      <div class="dashboard-actions">
+        <a href="/logout" class="logout-link">Logout</a>
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  .dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  .dashboard-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .dashboard-title {
+    margin-bottom: 0.5rem;
+    color: var(--black);
+  }
+  
+  .user-info {
+    color: #666;
+    font-size: 1.1rem;
+  }
+  
+  .user-email {
+    font-weight: 500;
+    color: var(--accent);
+  }
+  
+  .dashboard-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .dashboard-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eee;
+  }
+  
+  .card-title {
+    margin-bottom: 0.5rem;
+    color: var(--black);
+    font-size: 1.25rem;
+  }
+  
+  .card-description {
+    margin-bottom: 1rem;
+    color: #666;
+    line-height: 1.5;
+  }
+  
+  .card-action {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: opacity 0.3s ease;
+  }
+  
+  .card-action:hover:not(:disabled) {
+    opacity: 0.9;
+  }
+  
+  .card-action:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .dashboard-actions {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+  }
+  
+  .logout-link {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #dc3545;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: opacity 0.3s ease;
+  }
+  
+  .logout-link:hover {
+    opacity: 0.9;
+  }
+  
+  @media (max-width: 768px) {
+    .dashboard-content {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
