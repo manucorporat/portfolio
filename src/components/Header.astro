@@ -24,6 +24,17 @@ if (isLoggedIn) {
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
 			<HeaderLink href="/about">About</HeaderLink>
+			{isLoggedIn && <HeaderLink href="/dashboard">Dashboard</HeaderLink>}
+		</div>
+		<div class="auth-section">
+			{isLoggedIn ? (
+				<div class="user-info">
+					<span class="welcome-text">Welcome, {userEmail.split('@')[0]}</span>
+					<a href="/logout" class="logout-link">Logout</a>
+				</div>
+			) : (
+				<a href="/login" class="login-link">Login</a>
+			)}
 		</div>
 		<div class="social-links">
 			<a href="https://m.webtoo.ls/@astro" target="_blank">
