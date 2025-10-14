@@ -1,6 +1,20 @@
 ---
 import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
+
+// Check authentication status
+const authToken = Astro.cookies.get('auth-token');
+const isLoggedIn = !!authToken?.value;
+
+let userEmail = '';
+if (isLoggedIn) {
+  try {
+    const decoded = atob(authToken.value);
+    userEmail = decoded.split(':')[0];
+  } catch (e) {
+    // Invalid token
+  }
+}
 ---
 
 <header>
